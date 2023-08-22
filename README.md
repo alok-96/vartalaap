@@ -7,13 +7,15 @@
 ## Features
 - Authentication by Email and Password.
 - You can chat with any user registered in this application.
-- You can send text and pictures to the selected user.
+- You can send text, emojis and pictures to the selected user.
 - This application is under development, more features are coming soon....
 
 ## Project Screen Shot(s)
 ![image](https://github.com/alok-96/vartalaap/assets/90456532/19ee6bd4-c629-4e4d-9e53-96e099eec286)
 
-![image](https://github.com/alok-96/vartalaap/assets/90456532/6327b2ab-56e0-4ce8-af71-bd37138c9812)
+![image](https://github.com/alok-96/vartalaap/assets/90456532/c3491290-b5a8-4a36-a279-11bd0b7fa84c)
+
+
 
 
 ## Installation and Setup Instructions
