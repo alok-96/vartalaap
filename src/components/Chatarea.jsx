@@ -6,6 +6,7 @@ import Messages from "./Messages";
 import Input from "./Input";
 import { useContext } from "react";
 import { ChatContext } from "../context/ChatContext";
+import {GiHamburgerMenu} from 'react-icons/gi';
 
 const Chatarea = () => {
   const { data } = useContext(ChatContext);
@@ -13,17 +14,7 @@ const Chatarea = () => {
   return (
     <div className="chatarea">
       {JSON.stringify(data.user) === "{}" ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-            gap: "15px",
-            fontSize: "1.5rem",
-            color: "gray",
-          }}
-        >
+        <div id="blankMessage" >
           <BiMessageDetail />
           Select a User to Start Conversation.
         </div>
@@ -31,6 +22,7 @@ const Chatarea = () => {
         <>
           <div className="chatheader">
             <div className="userinfo">
+              {/* <GiHamburgerMenu /> */}
               <img src={data.user?.photoURL} alt="" />
               <span>{data.user?.displayName}</span>
             </div>

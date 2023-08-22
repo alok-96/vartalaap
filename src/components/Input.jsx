@@ -9,6 +9,7 @@ import { arrayUnion, doc, Timestamp, updateDoc } from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import InputEmoji from 'react-input-emoji';
 
 const Input = () => {
   const { currentUser } = useContext(AuthContext);
@@ -32,7 +33,7 @@ const Input = () => {
             }),
           });
         });
-      })
+      });
     } else {
       if (text) {
         await updateDoc(doc(db, "chats", data.chatID), {
@@ -67,36 +68,34 @@ const Input = () => {
     setText("");
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") handleSend();
-  };
-
   return (
     <div className="inputbox">
-      <input
-        type="text"
-        placeholder="Type a message"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        onKeyPress={handleKeyPress}
-      />
-      <div className="sendOptions">
-        <span>
-          <ImAttachment cursor={"not-allowed"} />
-        </span>
-        <input
-          type="file"
-          id="file"
-          style={{ display: "none" }}
-          onChange={(e) => setImg(e.target.files[0])}
+        <InputEmoji
+          value={text}
+          cleanOnEnter
+          placeholder="Type a message"
+          onChange={setText}
+          color={"red"}
+          theme="auto"
+          onEnter={handleSend}
         />
-        <label htmlFor="file">
-          <BsImage size={"20px"} cursor={"pointer"} />
-        </label>
-        <button onClick={handleSend}>
-          <MdSend size={"18px"} />
-        </button>
-      </div>
+        <div className="sendOptions">
+          <span>
+            <ImAttachment size={"20px"} cursor={"not-allowed"} />
+          </span>
+          <input
+            type="file"
+            id="file"
+            style={{ display: "none" }}
+            onChange={(e) => setImg(e.target.files[0])}
+          />
+          <label htmlFor="file">
+            <BsImage size={"22px"} cursor={"pointer"} />
+          </label>
+          <button onClick={handleSend}>
+            <MdSend size={"25px"} />
+          </button>
+        </div>
     </div>
   );
 };
