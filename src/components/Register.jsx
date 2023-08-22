@@ -6,12 +6,15 @@ import { auth, storage, db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Register = () => {
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
 
     const userName = e.target[0].value;
@@ -23,33 +26,27 @@ const Register = () => {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const storageRef = ref(storage, userName);
 
-      const uploadTask = uploadBytesResumable(storageRef, imageFile);
-
-      uploadTask.on(
-        (error) => {
-          setError(true);
-        },
-        async () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateProfile(res.user, {
-              displayName: userName,
-              photoURL: downloadURL,
-            });
-
-            await setDoc(doc(db, "users", res.user.uid), {
-              uid: res.user.uid,
-              displayName: userName,
-              email,
-              photoURL: downloadURL,
-            });
-
-            await setDoc(doc(db, "userChats", res.user.uid), {});
-            navigate("/");
+      await uploadBytesResumable(storageRef, imageFile).then(() => {
+        getDownloadURL(storageRef).then(async (downloadURL) => {
+          await updateProfile(res.user, {
+            displayName: userName,
+            photoURL: downloadURL,
           });
-        }
-      );
+  
+          await setDoc(doc(db, "users", res.user.uid), {
+            uid: res.user.uid,
+            displayName: userName,
+            email,
+            photoURL: downloadURL,
+          });
+  
+          await setDoc(doc(db, "userChats", res.user.uid), {});
+          navigate("/");
+        });
+      })
     } catch (err) {
       setError(true);
+      setLoading(false);
       console.log(err);
     }
   };
@@ -74,9 +71,18 @@ const Register = () => {
               Upload an Avatar
             </span>
           </label>
-          <button>Sign Up</button>
+          <button disabled={loading}>Sign Up</button>
         </form>
-        {error && <span style={{ color: "red" }}>An error occured.</span>}
+        {error && <span style={{ color: "red" }}>An error occured. Please try again.</span>}
+        {loading && (
+            <PulseLoader
+              color='#7895cb'
+              loading={loading}
+              size={10}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+        )}
         <p>
           Have an account? <Link to="/login">Log In</Link>
         </p>

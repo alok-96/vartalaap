@@ -345,7 +345,7 @@
                             border-radius: 50%;
                             object-fit: cover;
                         }
-                        p{
+                        #textMessage{
                             background-color: #ffffff;
                             font-size: 0.9rem;
                             padding: 10px;
@@ -365,7 +365,7 @@
                     flex-direction: row-reverse;
                     .messageContent{
                         flex-direction: row-reverse;
-                        p{
+                        #textMessage{
                             background-color: #7895CB;
                             color: #ffffff;
                             border-radius: 10px 0px 10px 10px;

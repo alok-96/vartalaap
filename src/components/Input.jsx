@@ -20,26 +20,19 @@ const Input = () => {
   const handleSend = async () => {
     if (img) {
       const storageRef = ref(storage, uuid());
-      const uploadTask = uploadBytesResumable(storageRef, img);
-
-      uploadTask.on(
-        (error) => {
-          // setError(true);
-        },
-        async () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateDoc(doc(db, "chats", data.chatID), {
-              messages: arrayUnion({
-                id: uuid(),
-                text,
-                senderId: currentUser.uid,
-                date: Timestamp.now(),
-                img: downloadURL,
-              }),
-            });
+      await uploadBytesResumable(storageRef, img).then(() => {
+        getDownloadURL(storageRef).then(async (downloadURL) => {
+          await updateDoc(doc(db, "chats", data.chatID), {
+            messages: arrayUnion({
+              id: uuid(),
+              text,
+              senderId: currentUser.uid,
+              date: Timestamp.now(),
+              img: downloadURL,
+            }),
           });
-        }
-      );
+        });
+      })
     } else {
       if (text) {
         await updateDoc(doc(db, "chats", data.chatID), {
@@ -75,7 +68,7 @@ const Input = () => {
   };
 
   const handleKeyPress = (e) => {
-    if(e.key === "Enter") handleSend();
+    if (e.key === "Enter") handleSend();
   };
 
   return (

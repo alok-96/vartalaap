@@ -27,9 +27,16 @@ const Message = ({ message }) => {
             }
             alt=""
           />
-          <p>{message.text}</p>
+          {message.text ? <p id="textMessage">{message.text}</p> : ""}
         </div>
-          {message.img && <img src={message.img} alt="" width={"200px"} style={{borderRadius: '6px'}} />}
+        {message.img && (
+          <img
+            src={message.img}
+            alt=""
+            width={"200px"}
+            style={{ borderRadius: "6px" }}
+          />
+        )}
         <div className="time">
           {new Date(message.date.seconds * 1000).toDateString()}
         </div>
