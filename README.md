@@ -1,24 +1,34 @@
-## Vartalaap
-- A real time chat application.
-- The user interface is designed with React.js and CSS.
-- Firebase is used for authentication and real-time database.
-- Open it in browser - https://vartalaap.pages.dev
+<div align='center'><img style="width:20%" src='https://github.com/alok-96/vartalaap/assets/90456532/8451653f-f8be-4f3c-ada4-847740940914'/></div>
 
-## Features
-- Authentication by Email and Password.
-- You can chat with any user registered in this application.
-- You can send text, emojis and pictures to the selected user.
-- This application is under development, more features are coming soon....
+## About the Project 📂
+<b>Vartalaap</b> is a chat application which allows users to communicate with their friends anywhere in the world by sending and receiving messages in real time. It is easier, simpler, and faster to connect with everyone and it is also easy to use. A user can send text, pictures and emojis to the selected user. 
 
-## Project Screen Shot(s)
+Firebase is used as backend for this chat application. Firebase is a set of backend cloud computing services and application development platforms provided by Google. It hosts databases, services, authentication, and integration for a variety of applications, including Android, iOS, JavaScript, Node.js etc.
+
+
+👉 Live Demo:  <a href='https://vartalaap.pages.dev/'>Vartalaap</a>
+
+### Built With:
+
+» React.js <br />
+» CSS <br />
+» Firebase <br />
+
+
+## Screenshots of the Project 📸
+
+<h3 align='center'>Register Page 🧑‍🏫</h3>
+
 ![image](https://github.com/alok-96/vartalaap/assets/90456532/19ee6bd4-c629-4e4d-9e53-96e099eec286)
+
+<h3 align='center'>Home Page 🏠</h3>
 
 ![image](https://github.com/alok-96/vartalaap/assets/90456532/c3491290-b5a8-4a36-a279-11bd0b7fa84c)
 
 
 
 
-## Installation and Setup Instructions
+## Installation and Setup Instructions 🛠️
 
 ```
 1. Clone this repository
