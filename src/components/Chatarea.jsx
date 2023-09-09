@@ -6,7 +6,6 @@ import Messages from "./Messages";
 import Input from "./Input";
 import { useContext } from "react";
 import { ChatContext } from "../context/ChatContext";
-import {GiHamburgerMenu} from 'react-icons/gi';
 
 const Chatarea = () => {
   const { data } = useContext(ChatContext);
@@ -22,7 +21,6 @@ const Chatarea = () => {
         <>
           <div className="chatheader">
             <div className="userinfo">
-              {/* <GiHamburgerMenu /> */}
               <img src={data.user?.photoURL} alt="" />
               <span>{data.user?.displayName}</span>
             </div>

@@ -33,7 +33,7 @@
 
 .container{
     height: 100vh;
-    background-color: #A0BFE0;
+    background: linear-gradient(135deg,#A0BFE0 0%,#A0BFE0 50%,#1a3361 50%,#1a3361 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,11 +68,11 @@
             input{
                 padding: 15px 15px; 
                 border: none;
-                border-bottom: 1px solid #C5DFF8;
+                border-bottom: 1px solid #7895CB;
                 outline: none;
                 width: 100%;
                 &::placeholder{
-                    color: #C5DFF8;
+                    color: #7895CB;
                 };
                 
                 &:focus::placeholder{
@@ -106,12 +106,12 @@
 
 
 .home{
-    background-color: #A0BFE0;
+    background-color: #244178;
     height: 100vh;
     display: flex;
 
     .sidepanel{
-        background-color: #35548f;
+        background-color: #244178;
         flex: 1.2;
         color: #e4e9ed;
         border-right: 1px solid #A0BFE0;
@@ -122,11 +122,13 @@
             flex: 100%;
         }
         .navbar{
-            background-color: #244178;
+            background-color: #1a3361;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px;
+            border-bottom: 2px solid #A0BFE0;
+            border-radius: 5px;
 
             .title {
                 font-size: 16px;
@@ -153,7 +155,7 @@
                 
                 button{
                     color: #e4e9ed;
-                    background-color: #162f5e;
+                    background-color: #4e6ca6;
                     padding: 5px 10px;
                     border: none;
                     outline: none;
@@ -174,12 +176,14 @@
 
                 input{
                     background-color: transparent;
-                    border-radius: 50px;
-                    border: 1px solid #e4e9ed;
+                    border-radius: 5px;
+                    border: 1px solid #949491;
+                    border-bottom: 2px solid #e4e9ed;
                     outline: none;
                     width: 100%;
-                    padding: 10px 20px;
+                    padding: 10px ;
                     color: #e4e9ed;
+                    background-color: #4e6ca6;
                     
                     &::placeholder{
                         font-weight: 500;
@@ -197,7 +201,6 @@
                 align-items: center;
                 gap: 10px;
                 padding: 10px;
-                border-bottom: 1px solid #A0BFE0;
                 background-color: #244178;
                 cursor: pointer;
 
@@ -255,7 +258,7 @@
                 cursor: pointer;
                 
                 &:hover{
-                    background-color: #244178;
+                    background-color: #1a3361;
                 }
                 
                 img{
@@ -293,6 +296,9 @@
     .chatarea{
         background-color: #e4e9ed;
         flex: 3.8;
+        background-image: url('./assets/chat.png');
+        background-repeat: no-repeat;
+        background-position: center;
 
         #blankMessage{
             display: flex;
@@ -301,14 +307,14 @@
             height: 100vh;
             gap: 15px;
             font-size: 1.5rem;
-            color: gray;
+            color: #3a3b3a;
             @include tablet{
                 font-size: 1rem;
             }
         }
 
         .chatheader{
-            background-color: #244178;
+            background-color: #1a3361;
             color: #e4e9ed;
             display: flex;
             padding: 10px;
@@ -342,6 +348,8 @@
             height: calc(100% - 120px);
             overflow-y: scroll;
             width: 100%;
+            background-image: url('./assets/wallpaper.jpg');    
+            background-size: contain;
 
             .message{
                 display: flex;
@@ -422,7 +430,7 @@
                     border: none;
                     background-color: transparent;
                     cursor: pointer;
-                    color: #7895CB;
+                    color: #1a3361;
                 }
             }
         }

@@ -64,24 +64,28 @@ const Register = () => {
           <input required type="password" placeholder="Password" />
           <input required type="file" id="avatar" style={{ display: "none" }} />
           <label htmlFor="avatar">
-            <BsFillImageFill color="#A0BFE0" size={"32px"} cursor={"pointer"} />
+            <BsFillImageFill color="#7895CB" size={"32px"} cursor={"pointer"} />
             <span
-              style={{ color: "#A0BFE0", fontSize: "13px", cursor: "pointer" }}
+              style={{ color: "#7895CB", fontSize: "13px", cursor: "pointer" }}
             >
               Upload an Avatar
             </span>
           </label>
           <button disabled={loading}>Sign Up</button>
         </form>
-        {error && <span style={{ color: "red" }}>An error occured. Please try again.</span>}
+        {error && (
+          <span style={{ color: "red" }}>
+            An error occured. Please try again.
+          </span>
+        )}
         {loading && (
-            <PulseLoader
-              color='#7895cb'
-              loading={loading}
-              size={10}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
+          <PulseLoader
+            color="#7895cb"
+            loading={loading}
+            size={10}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
         )}
         <p>
           Have an account? <Link to="/login">Log In</Link>

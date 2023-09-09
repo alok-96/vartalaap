@@ -76,6 +76,7 @@ const Input = () => {
           placeholder="Type a message"
           onChange={setText}
           color={"red"}
+          borderRadius={5}
           theme="auto"
           onEnter={handleSend}
         />
