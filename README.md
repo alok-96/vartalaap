@@ -19,11 +19,14 @@ Firebase is used as backend for this chat application. Firebase is a set of back
 
 <h3 align='center'>Register Page 🧑‍🏫</h3>
 
-![image](https://github.com/alok-96/vartalaap/assets/90456532/19ee6bd4-c629-4e4d-9e53-96e099eec286)
+![Screenshot_20230909_115000](https://github.com/alok-96/vartalaap/assets/90456532/84f56caf-b064-4675-beff-3d970bad54a7)
 
 <h3 align='center'>Home Page 🏠</h3>
 
-![image](https://github.com/alok-96/vartalaap/assets/90456532/c3491290-b5a8-4a36-a279-11bd0b7fa84c)
+![Screenshot_20230909_115034](https://github.com/alok-96/vartalaap/assets/90456532/0aa13774-fcbc-4e4f-89cf-4624ecc87328)
+
+![Screenshot_20230909_115404](https://github.com/alok-96/vartalaap/assets/90456532/0f4392cc-82b7-4580-9dc3-4ddc9c87a933)
+
 
 
 
