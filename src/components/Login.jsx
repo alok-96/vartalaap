@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import logo from "../assets/logo.png";
 import { auth } from "../firebase";
 import PulseLoader from "react-spinners/PulseLoader";
+import { IoIosAlert } from "react-icons/io";
 
 const Login = () => {
   const [error, setError] = useState(false);
@@ -34,8 +35,11 @@ const Login = () => {
         </p>
         <p>Login</p>
         <form onSubmit={handleSubmit}>
-          <input required type="email" placeholder="Email" />
-          <input required type="password" placeholder="Password" />
+          <input required type="email" placeholder="alok@gmail.com" />
+          <input required type="password" placeholder="alok@123" />
+          <p className="credentials">
+          <IoIosAlert /> Use above credentials to login
+          </p>
           <button>Log In</button>
         </form>
         {error && (
@@ -50,10 +54,12 @@ const Login = () => {
             data-testid="loader"
           />
         )}
+        
         <p>
           Don't have an account? <Link to="/register">Register</Link>
         </p>
       </div>
+      
     </div>
   );
 };

@@ -75,9 +75,9 @@ const Input = () => {
           cleanOnEnter
           placeholder="Type a message"
           onChange={setText}
-          color={"red"}
+          color={"#4e6ca6"}
           borderRadius={5}
-          theme="auto"
+          theme="light"
           onEnter={handleSend}
         />
         <div className="sendOptions">
