@@ -81,20 +81,17 @@
             input{
                 padding: 15px 15px; 
                 border: none;
-                border: 1.5px solid #ffffff;
-                border-bottom: 1px solid #7895CB;
+                border: 1.5px solid #7895CB;
+                border-radius: 5px;
                 outline: none;
                 width: 100%;
                 &::placeholder{
                     color: #7895CB;
                 };
                 
-                &:focus::placeholder{
-                    // color: transparent;
-                }
 
                 &:focus{
-                    border: 1.5px solid #7895CB;
+                    border: 1.5px solid #4265a5;
                     border-radius: 5px;
                 }
                 
@@ -113,6 +110,7 @@
                 border: none;
                 outline: none;
                 cursor: pointer;
+                border-radius: 5px;
             }
         }
 
